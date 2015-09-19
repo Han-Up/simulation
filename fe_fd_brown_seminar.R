@@ -60,7 +60,7 @@ case1<-foreach(k=1:1000 , .combine=rbind, .packages=c("lfe","data.table")) %dopa
 	ols= lm(y_fe ~ x + 1,data)
 	fe = felm(y_fe ~ x  | firm | 0 | 0 ,data)
 	fd = lm(d.y_fe ~ d.x , data)
-	## although numerically FE equivalent to FD only in T=2, both are unbiased and consistent for largge N
+	## although numerically FE equivalent to FD only in T=2, both are unbiased and consistent for large N
 	
 	coef_x_ols <- coef(ols)[2]
 	coef_x_fe <- coef(fe)[1]
